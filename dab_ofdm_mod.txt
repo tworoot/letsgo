@@ -1,0 +1,37 @@
+id: dab_ofdm_modulator
+label: ofdm_mod
+category: '[DAB]'
+
+templates : 
+imports: import dab
+ make: dab.ofdm_mod(dab.parameters.dab_parameters(mode=$dab_mode,sample_rate=$samp_rate,verbose=False))
+ 
+parameters: 
+  - 
+   id: DAB Mode
+   label: dab_mode
+   dtype: enum
+   default: 1
+   options : [1, 2, 3, 4] 
+   option_labels : [1, 2, 3, 4]
+
+-
+   id: Sampling Rate
+   label: samp_rate
+   default: samp_rate
+   dtype: int
+
+ inputs: 
+-
+   label: in
+   dtype: byte
+   vlen: 384
+- 
+   label: in
+   dtype: byte
+
+outputs: 
+  label: out
+  dtype: complex
+
+file_format : 1

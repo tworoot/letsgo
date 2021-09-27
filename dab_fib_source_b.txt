@@ -1,0 +1,59 @@
+ id: dab_fib_source_b
+ label: fib_source_b
+ category: '[DAB]'
+
+templates:
+ import: import dab(gnu에서 모듈이름을 dab로 만들어야함)
+ make: dab.fib_source_b(&파이썬 함수)
+
+ parameters: 
+  - 
+   id: Mode
+   label: transmission_mode
+   dtype: int
+   options: [1, 2, 3 ,4]
+   options_labels: ['Mode 1', 'Mode 2', 'Mode 3', 'Mode 4']
+
+ -
+   id: Country ID
+   label: coutry_ID
+   dtype: int
+
+  - 
+   id: Number of sub-channels
+   label: num_subch
+   dtype: int
+  
+  - 
+   id: Ensemble label
+   label: ensemble_label
+   dtype: string
+  - 
+   id: Programme service labels
+   label: programme_service_labels
+   dtype: string
+  - 
+   id: Service language
+   label: service_comp_lang
+   dtype: raw
+  - 
+   id: Protection modes
+   label: protection_mode
+   dtype: raw
+  - 
+   id: "Data rates / 8kbit/s"
+   label: data_rate_n
+   dtype: raw
+  - 
+   id: Dabplus
+   label: dabplus
+   dtype: raw
+ 
+outputs: 
+ label: out
+ domain: stream
+ dtype : byte
+ vlen : 1
+ optional : 0
+
+file_format : 1

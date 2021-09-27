@@ -1,0 +1,40 @@
+ id: dab_fib_transmission_frame_mux_bb
+ label: fib_transmission_frame_mux_bb
+ category: '[DAB]'
+
+templates
+ imports: import dab
+ make: dab.dab_transmission_frame_mux_bb($dab_mode, $num_subch, $subch_size)
+
+ parameters: 
+  - 
+   id: DAB Mode
+   label: dab_mode
+   dtype: int
+   default: 1
+   options : [1, 2, 3, 4]
+   option_labels : ['Mode 1', 'Mode 2', 'Mode 3', Mode 4'] 
+   
+  - 
+   id: Number of sub-channels
+   label: num_subch
+   dtype: int
+  - 
+   id: Subchannel Sizes
+   label: subch_size
+   dtype: raw
+ 
+inputs: 
+  - 
+   label: in
+   dtype: byte
+  - 
+   label: in
+   dtype: byte
+   nports: "$num_subch"
+
+outputs: 
+  label: out
+  dtype: byte
+
+file_format : 1
